@@ -1,0 +1,5 @@
+# Example configuration (not used by current CLI, but handy for future extensions)
+geoip_provider: ip-api
+rate_per_second: 1.0
+rdap: true
+output_format: csv

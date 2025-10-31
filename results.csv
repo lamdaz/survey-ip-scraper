@@ -1,0 +1,32 @@
+proxy,status,latency_s,visible_ip,country,region,city,isp,error
+103.82.27.24:10001,ok,4.107,103.82.27.24,Vietnam,Bac Ninh,Đức Thọ,Vietnam Posts and Telecommunications Group,
+104.248.197.67:1080,ok,3.165,104.248.197.67,The Netherlands,North Holland,Amsterdam,"DigitalOcean, LLC",
+107.152.98.5:4145,ok,4.148,107.152.98.5,United States,California,Los Angeles,Performive LLC,
+107.181.168.145:4145,ok,8.277,107.181.168.145,United States,Florida,Miami,Performive LLC,
+121.169.46.116:1090,ok,4.0,121.169.46.116,South Korea,Gyeonggi-do,Osan,Korea Telecom,
+139.59.24.173:1080,ok,3.23,139.59.24.173,India,Karnataka,Bengaluru,"DigitalOcean, LLC",
+147.45.51.168:1080,ok,5.185,147.45.51.168,Italy,Lombardy,Milan,Global Connectivity Solutions LLP,
+159.203.61.169:1080,ok,4.141,159.203.61.169,Canada,Ontario,Toronto,"DigitalOcean, LLC",
+16.62.79.69:3128,ok,1.733,16.62.79.69,Switzerland,Zurich,Zurich,"Amazon.com, Inc.",
+161.35.31.237:1080,ok,3.634,161.35.31.237,Germany,Hesse,Frankfurt am Main,"DigitalOcean, LLC",
+162.253.68.97:4145,ok,2.509,162.253.68.97,United States,California,Los Angeles,Performive LLC,
+174.75.211.222:4145,ok,3.063,174.75.211.222,United States,Florida,Pensacola,Cox Communications Inc.,
+174.77.111.196:4145,ok,3.305,174.77.111.196,United States,Florida,Pensacola,Cox Communications Inc.,
+184.170.248.5:4145,ok,2.752,184.170.248.5,United States,Georgia,Atlanta,Performive LLC,
+184.182.240.211:4145,ok,3.592,184.182.240.211,United States,Georgia,Macon,Cox Communications Inc.,
+185.149.240.155:1080,ok,7.917,185.149.240.155,Russia,St.-Petersburg,St Petersburg,JSC Selectel,
+192.241.156.17:1080,ok,3.668,192.241.156.17,United States,New Jersey,North Bergen,"DigitalOcean, LLC",
+217.173.31.28:1080,dead,,,,,,,unknown
+222.59.173.105:44083,ok,4.415,222.59.173.105,China,Jiangsu,Nanjing,China Mobile Communications Corporation,
+24.249.199.12:4145,ok,2.965,24.249.199.12,United States,California,San Diego,Cox Communications Inc.,
+37.192.133.82:1080,ok,6.222,37.192.133.82,Russia,Novosibirsk Oblast,Novosibirsk,Novotelecom Ltd.,
+40.192.3.100:6969,dead,,,,,,,HTTP 400
+40.192.3.100:8331,dead,,,,,,,HTTP 400
+43.205.124.165:19404,dead,,,,,,,HTTP 400
+46.183.130.89:1080,dead,,,,,,,"[Errno 111] Couldn't connect to proxy 46.183.130.89:1080 [Connect call failed ('46.183.130.89', 1080)]"
+47.83.218.87:1111,dead,,,,,,,"[Errno 111] Couldn't connect to proxy 47.83.218.87:1111 [Connect call failed ('47.83.218.87', 1111)]"
+54.226.156.148:20201,ok,1.409,54.226.156.148,United States,Virginia,Ashburn,"Amazon.com, Inc.",
+64.227.131.240:1080,ok,3.874,64.227.131.240,India,Karnataka,Bengaluru,"DigitalOcean, LLC",
+77.50.104.110:1080,dead,,,,,,,unknown
+90.189.165.238:1080,dead,,,,,,,unknown
+99.79.189.75:1080,ok,3.511,99.79.189.75,Canada,Ontario,Toronto,"Amazon.com, Inc.",
