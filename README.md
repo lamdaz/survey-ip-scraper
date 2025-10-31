@@ -4,25 +4,32 @@ A Python tool for scraping and analyzing IP addresses to detect geographic locat
 
 
 
+
 <!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
 ## 📊 Latest Scan Results
 
-**Last Updated:** 2025-10-31 11:05:48 UTC
+**Last Updated:** 2025-10-31 11:10:33 UTC
 
-- **Total IPs Scanned:** 6
-- **Unique Countries:** 2
-- **Unique ISPs:** 3
+- **Total IPs Scanned:** 12
+- **Unique Countries:** 9
+- **Unique ISPs:** 7
 
 ### Top Countries
 - United States: 4 IPs
-- Australia: 2 IPs
+- Vietnam: 1 IPs
+- The Netherlands: 1 IPs
+- South Korea: 1 IPs
+- India: 1 IPs
 
 ### Top ISPs
-- Google LLC: 2 IPs
-- Cloudflare, Inc: 2 IPs
-- Cisco OpenDNS, LLC: 2 IPs
+- DigitalOcean, LLC: 4 IPs
+- Performive LLC: 3 IPs
+- Vietnam Posts and Telecommunications Group: 1 IPs
+- Korea Telecom: 1 IPs
+- Global Connectivity Solutions LLP: 1 IPs
 
 <!-- END AUTO-GENERATED STATS -->
+
 
 
 ## Features
