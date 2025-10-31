@@ -7,3 +7,9 @@ venv/
 .DS_Store
 dist/
 build/
+
+# Auto-generated results (keep in repo for tracking)
+# Timestamped backups will be committed
+# data/results_*.csv
+# data/latest_results.csv
+# data/summary.json

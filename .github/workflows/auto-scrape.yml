@@ -1,0 +1,182 @@
+name: Auto IP Scraper
+
+on:
+  schedule:
+    # Run every 5 minutes
+    - cron: '*/5 * * * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/ips_to_scrape.txt'
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Cache pip packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Check for IP list
+      id: check_ips
+      run: |
+        if [ -f "data/ips_to_scrape.txt" ]; then
+          echo "ips_exist=true" >> $GITHUB_OUTPUT
+          echo "✓ Found IP list to scrape"
+        else
+          echo "ips_exist=false" >> $GITHUB_OUTPUT
+          echo "⚠ No IP list found, using sample IPs"
+          cp data/sample_ips.txt data/ips_to_scrape.txt
+        fi
+    
+    - name: Run IP scraper
+      run: |
+        echo "🚀 Starting IP scraping process..."
+        python -m survey_ip.cli \
+          --input data/ips_to_scrape.txt \
+          --output data/latest_results.csv \
+          --rate 0.5
+        
+        echo "✓ Scraping completed"
+        
+        # Create timestamped backup
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        cp data/latest_results.csv "data/results_${TIMESTAMP}.csv"
+        
+        echo "✓ Created backup: results_${TIMESTAMP}.csv"
+    
+    - name: Generate summary report
+      run: |
+        echo "📊 Generating summary report..."
+        python -c "
+import csv
+import json
+from datetime import datetime
+from collections import Counter
+
+with open('data/latest_results.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    data = list(reader)
+
+countries = Counter(row['country'] for row in data if row.get('country'))
+isps = Counter(row['isp'] for row in data if row.get('isp'))
+
+summary = {
+    'timestamp': datetime.now().isoformat(),
+    'total_ips': len(data),
+    'top_countries': dict(countries.most_common(5)),
+    'top_isps': dict(isps.most_common(5)),
+    'unique_countries': len(countries),
+    'unique_isps': len(isps)
+}
+
+with open('data/summary.json', 'w') as f:
+    json.dump(summary, f, indent=2)
+
+print(f'✓ Processed {len(data)} IP addresses')
+print(f'✓ Found {len(countries)} unique countries')
+print(f'✓ Found {len(isps)} unique ISPs')
+"
+        echo "✓ Summary generated"
+    
+    - name: Update README with latest stats
+      run: |
+        python -c "
+import json
+from datetime import datetime
+
+with open('data/summary.json', 'r') as f:
+    summary = json.load(f)
+
+badge_section = f'''
+<!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
+## 📊 Latest Scan Results
+
+**Last Updated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}
+
+- **Total IPs Scanned:** {summary['total_ips']}
+- **Unique Countries:** {summary['unique_countries']}
+- **Unique ISPs:** {summary['unique_isps']}
+
+### Top Countries
+'''
+
+for country, count in list(summary['top_countries'].items())[:5]:
+    badge_section += f'- {country}: {count} IPs\n'
+
+badge_section += '\n### Top ISPs\n'
+for isp, count in list(summary['top_isps'].items())[:5]:
+    badge_section += f'- {isp}: {count} IPs\n'
+
+badge_section += '\n<!-- END AUTO-GENERATED STATS -->\n'
+
+with open('README.md', 'r') as f:
+    content = f.read()
+
+# Replace or add stats section
+if '<!-- AUTO-GENERATED STATS' in content:
+    import re
+    pattern = r'<!-- AUTO-GENERATED STATS.*?<!-- END AUTO-GENERATED STATS -->'
+    content = re.sub(pattern, badge_section, content, flags=re.DOTALL)
+else:
+    # Add before the first ## heading
+    parts = content.split('\n## ', 1)
+    if len(parts) == 2:
+        content = parts[0] + '\n\n' + badge_section + '\n\n## ' + parts[1]
+
+with open('README.md', 'w') as f:
+    f.write(content)
+
+print('✓ README updated with latest stats')
+"
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "GitHub Actions Bot"
+        
+        # Add all changes
+        git add data/latest_results.csv data/results_*.csv data/summary.json README.md
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+          git commit -m "🤖 Auto-update: IP scan results - ${TIMESTAMP}"
+          git push
+          echo "✓ Changes pushed to repository"
+        fi
+    
+    - name: Create artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ip-scan-results
+        path: |
+          data/latest_results.csv
+          data/summary.json
+        retention-days: 30

@@ -1,0 +1,11 @@
+# IP Addresses to Scrape
+# Add one IP address per line
+# Lines starting with # are comments and will be ignored
+
+# Sample IPs - Replace with your own
+8.8.8.8
+8.8.4.4
+1.1.1.1
+1.0.0.1
+208.67.222.222
+208.67.220.220
