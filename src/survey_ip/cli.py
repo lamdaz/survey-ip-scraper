@@ -1,10 +1,15 @@
 import argparse
 import csv
+import sys
+import os
 from tqdm import tqdm
-from .lookup import lookup_ip
 import logging
 import yaml
-import os
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from lookup import lookup_ip
 
 logger = logging.getLogger(__name__)
 

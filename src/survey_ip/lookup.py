@@ -1,8 +1,14 @@
 import requests
+import sys
+import os
 from ipwhois import IPWhois
 from ipwhois.exceptions import IPDefinedError
-from .utils import rate_limited, safe_get
 import logging
+
+# Add current directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from utils import rate_limited, safe_get
 
 logger = logging.getLogger(__name__)
 
