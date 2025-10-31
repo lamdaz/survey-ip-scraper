@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-10-31T11:05:48.651367",
+  "total_ips": 6,
+  "top_countries": {
+    "United States": 4,
+    "Australia": 2
+  },
+  "top_isps": {
+    "Google LLC": 2,
+    "Cloudflare, Inc": 2,
+    "Cisco OpenDNS, LLC": 2
+  },
+  "unique_countries": 2,
+  "unique_isps": 3
+}

@@ -2,6 +2,29 @@
 
 A Python tool for scraping and analyzing IP addresses to detect geographic location, ISP/company information, ASN data, and network registration details.
 
+
+
+<!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
+## 📊 Latest Scan Results
+
+**Last Updated:** 2025-10-31 11:05:48 UTC
+
+- **Total IPs Scanned:** 6
+- **Unique Countries:** 2
+- **Unique ISPs:** 3
+
+### Top Countries
+- United States: 4 IPs
+- Australia: 2 IPs
+
+### Top ISPs
+- Google LLC: 2 IPs
+- Cloudflare, Inc: 2 IPs
+- Cisco OpenDNS, LLC: 2 IPs
+
+<!-- END AUTO-GENERATED STATS -->
+
+
 ## Features
 
 ✅ **Geolocation Detection**: Country, region, city, coordinates, timezone  
