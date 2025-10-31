@@ -58,7 +58,8 @@ jobs:
     - name: Run IP scraper
       run: |
         echo "🚀 Starting IP scraping process..."
-        python -m survey_ip.cli \
+        export PYTHONPATH="${PYTHONPATH}:${PWD}/src"
+        python src/survey_ip/cli.py \
           --input data/ips_to_scrape.txt \
           --output data/latest_results.csv \
           --rate 0.5
