@@ -62,6 +62,7 @@ jobs:
         python src/survey_ip/cli.py \
           --input data/ips_to_scrape.txt \
           --output data/latest_results.csv \
+          --socks5-output socks5.txt \
           --rate 0.5
         
         echo "✓ Scraping completed"
@@ -163,7 +164,7 @@ jobs:
         git config --local user.name "GitHub Actions Bot"
         
         # Add all changes
-        git add data/latest_results.csv data/results_*.csv data/summary.json README.md
+        git add data/latest_results.csv data/results_*.csv data/summary.json README.md socks5.txt
         
         # Check if there are changes to commit
         if git diff --staged --quiet; then
