@@ -72,87 +72,87 @@ jobs:
     - name: Generate summary report
       run: |
         echo "📊 Generating summary report..."
-        python -c "
-import csv
-import json
-from datetime import datetime
-from collections import Counter
-
-with open('data/latest_results.csv', 'r') as f:
-    reader = csv.DictReader(f)
-    data = list(reader)
-
-countries = Counter(row['country'] for row in data if row.get('country'))
-isps = Counter(row['isp'] for row in data if row.get('isp'))
-
-summary = {
-    'timestamp': datetime.now().isoformat(),
-    'total_ips': len(data),
-    'top_countries': dict(countries.most_common(5)),
-    'top_isps': dict(isps.most_common(5)),
-    'unique_countries': len(countries),
-    'unique_isps': len(isps)
-}
-
-with open('data/summary.json', 'w') as f:
-    json.dump(summary, f, indent=2)
-
-print(f'✓ Processed {len(data)} IP addresses')
-print(f'✓ Found {len(countries)} unique countries')
-print(f'✓ Found {len(isps)} unique ISPs')
-"
+        python << 'EOF'
+        import csv
+        import json
+        from datetime import datetime
+        from collections import Counter
+        
+        with open('data/latest_results.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            data = list(reader)
+        
+        countries = Counter(row['country'] for row in data if row.get('country'))
+        isps = Counter(row['isp'] for row in data if row.get('isp'))
+        
+        summary = {
+            'timestamp': datetime.now().isoformat(),
+            'total_ips': len(data),
+            'top_countries': dict(countries.most_common(5)),
+            'top_isps': dict(isps.most_common(5)),
+            'unique_countries': len(countries),
+            'unique_isps': len(isps)
+        }
+        
+        with open('data/summary.json', 'w') as f:
+            json.dump(summary, f, indent=2)
+        
+        print(f'✓ Processed {len(data)} IP addresses')
+        print(f'✓ Found {len(countries)} unique countries')
+        print(f'✓ Found {len(isps)} unique ISPs')
+        EOF
         echo "✓ Summary generated"
     
     - name: Update README with latest stats
       run: |
-        python -c "
-import json
-from datetime import datetime
-
-with open('data/summary.json', 'r') as f:
-    summary = json.load(f)
-
-badge_section = f'''
-<!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
-## 📊 Latest Scan Results
-
-**Last Updated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}
-
-- **Total IPs Scanned:** {summary['total_ips']}
-- **Unique Countries:** {summary['unique_countries']}
-- **Unique ISPs:** {summary['unique_isps']}
-
-### Top Countries
-'''
-
-for country, count in list(summary['top_countries'].items())[:5]:
-    badge_section += f'- {country}: {count} IPs\n'
-
-badge_section += '\n### Top ISPs\n'
-for isp, count in list(summary['top_isps'].items())[:5]:
-    badge_section += f'- {isp}: {count} IPs\n'
-
-badge_section += '\n<!-- END AUTO-GENERATED STATS -->\n'
-
-with open('README.md', 'r') as f:
-    content = f.read()
-
-# Replace or add stats section
-if '<!-- AUTO-GENERATED STATS' in content:
-    import re
-    pattern = r'<!-- AUTO-GENERATED STATS.*?<!-- END AUTO-GENERATED STATS -->'
-    content = re.sub(pattern, badge_section, content, flags=re.DOTALL)
-else:
-    # Add before the first ## heading
-    parts = content.split('\n## ', 1)
-    if len(parts) == 2:
-        content = parts[0] + '\n\n' + badge_section + '\n\n## ' + parts[1]
-
-with open('README.md', 'w') as f:
-    f.write(content)
-
-print('✓ README updated with latest stats')
-"
+        python << 'EOF'
+        import json
+        from datetime import datetime
+        
+        with open('data/summary.json', 'r') as f:
+            summary = json.load(f)
+        
+        badge_section = f'''
+        <!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
+        ## 📊 Latest Scan Results
+        
+        **Last Updated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}
+        
+        - **Total IPs Scanned:** {summary['total_ips']}
+        - **Unique Countries:** {summary['unique_countries']}
+        - **Unique ISPs:** {summary['unique_isps']}
+        
+        ### Top Countries
+        '''
+        
+        for country, count in list(summary['top_countries'].items())[:5]:
+            badge_section += f'- {country}: {count} IPs\n'
+        
+        badge_section += '\n### Top ISPs\n'
+        for isp, count in list(summary['top_isps'].items())[:5]:
+            badge_section += f'- {isp}: {count} IPs\n'
+        
+        badge_section += '\n<!-- END AUTO-GENERATED STATS -->\n'
+        
+        with open('README.md', 'r') as f:
+            content = f.read()
+        
+        # Replace or add stats section
+        if '<!-- AUTO-GENERATED STATS' in content:
+            import re
+            pattern = r'<!-- AUTO-GENERATED STATS.*?<!-- END AUTO-GENERATED STATS -->'
+            content = re.sub(pattern, badge_section, content, flags=re.DOTALL)
+        else:
+            # Add before the first ## heading
+            parts = content.split('\n## ', 1)
+            if len(parts) == 2:
+                content = parts[0] + '\n\n' + badge_section + '\n\n## ' + parts[1]
+        
+        with open('README.md', 'w') as f:
+            f.write(content)
+        
+        print('✓ README updated with latest stats')
+        EOF
     
     - name: Commit and push changes
       run: |
