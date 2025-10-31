@@ -105,15 +105,23 @@ Options:
 
 ### Input Format
 
-Create a text file with one IP address per line:
+Create a text file with one IP address per line. **Supports both plain IPs and IP:PORT format** (commonly used for proxies/SOCKS5):
 
 ```
+# Plain IP addresses
 8.8.8.8
 1.1.1.1
 93.184.216.34
+
+# IP:PORT format (tool extracts IP only)
+103.82.27.24:10001
+104.248.197.67:1080
+107.152.98.5:4145
+
 # Comments starting with # are ignored
-203.0.113.0
 ```
+
+**Perfect for proxy lists!** The tool automatically extracts the IP from IP:PORT format.
 
 ### Example
 

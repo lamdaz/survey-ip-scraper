@@ -16,12 +16,18 @@ logger = logging.getLogger(__name__)
 DEFAULT_OUTPUT = "results.csv"
 
 def load_ips_from_file(path):
+    """Load IPs from file. Supports both plain IPs and IP:PORT format (extracts IP only)."""
     with open(path, "r") as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            yield line
+            # Extract IP from IP:PORT format if present
+            if ':' in line:
+                ip = line.split(':')[0]
+            else:
+                ip = line
+            yield ip.strip()
 
 def main():
     parser = argparse.ArgumentParser(description="Survey IP metadata")
