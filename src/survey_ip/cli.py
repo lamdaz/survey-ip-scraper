@@ -54,10 +54,61 @@ def is_residential_proxy(isp_name, org_name):
         if keyword in combined:
             return False
     
-    # Common residential ISP keywords
+    # Major USA residential ISPs and mobile carriers
+    usa_residential_isps = [
+        # Mobile carriers
+        't-mobile', 'tmobile', 't mobile',
+        'verizon', 'verizon wireless',
+        'at&t', 'att', 'at&t mobility',
+        'sprint',
+        'us cellular', 'uscellular',
+        'boost mobile',
+        'cricket wireless',
+        'metro pcs', 'metropcs',
+        
+        # Cable/Broadband ISPs
+        'comcast', 'xfinity',
+        'charter', 'spectrum',
+        'cox', 'cox communications',
+        'optimum', 'cablevision',
+        'mediacom',
+        'suddenlink',
+        'wow', 'wideopenwest',
+        'rcn',
+        'armstrong',
+        
+        # DSL/Fiber ISPs
+        'centurylink', 'century link',
+        'frontier', 'frontier communications',
+        'windstream',
+        'consolidated communications',
+        'earthlink',
+        'viasat',
+        'hughesnet',
+        
+        # Regional ISPs
+        'grande communications',
+        'atlantic broadband',
+        'wave broadband',
+        'astound broadband',
+        'sparklight',
+        'midco',
+        'buckeye',
+    ]
+    
+    # Check for USA residential ISPs first (most reliable)
+    for isp in usa_residential_isps:
+        if isp in combined:
+            return True
+    
+    # Common residential ISP keywords (international)
     residential_keywords = [
-        'telecom', 'communications', 'broadband', 'internet service',
-        'cable', 'fiber', 'dsl', 'mobile', 'wireless'
+        'telecom', 'telecommunications', 'communications',
+        'broadband', 'internet service',
+        'cable', 'fiber', 'fibre', 'dsl',
+        'mobile', 'wireless', 'cellular',
+        'adsl', 'vdsl',
+        'network provider', 'network services'
     ]
     
     for keyword in residential_keywords:
