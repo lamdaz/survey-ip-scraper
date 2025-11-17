@@ -1,20 +1,19 @@
 {
-  "timestamp": "2025-11-17T06:54:20.163099",
+  "timestamp": "2025-11-17T07:00:46.269436",
   "total_ips": 12,
   "top_countries": {
-    "United States": 4,
-    "Vietnam": 1,
+    "United States": 3,
     "The Netherlands": 1,
-    "South Korea": 1,
-    "India": 1
+    "Italy": 1,
+    "Canada": 1,
+    "Switzerland": 1
   },
   "top_isps": {
-    "DigitalOcean, LLC": 4,
     "Performive LLC": 3,
-    "Vietnam Posts and Telecommunications Group": 1,
-    "Korea Telecom": 1,
-    "Global Connectivity Solutions LLP": 1
+    "DigitalOcean, LLC": 2,
+    "Global Connectivity Solutions LLP": 1,
+    "Amazon.com, Inc.": 1
   },
-  "unique_countries": 9,
-  "unique_isps": 7
+  "unique_countries": 5,
+  "unique_isps": 4
 }
