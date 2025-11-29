@@ -1,0 +1,13 @@
+ip,port,country,region,city,zip,lat,lon,isp,org,as,reverse,netname,country_reg,cidr,start_address,end_address,is_residential
+103.82.27.24,10001,Vietnam,Hanoi,Hanoi,,21.0278,105.834,Vietnam Posts and Telecommunications Group,Runfly Joint Stock Company,AS135905 VIETNAM POSTS AND TELECOMMUNICATIONS GROUP,103.82.27.24.cloudfly.vn,RUNFLY-VN,VN,103.82.24.0/22,103.82.24.0,103.82.27.255,Yes
+104.248.197.67,1080,The Netherlands,North Holland,Amsterdam,1098,52.352,4.9392,"DigitalOcean, LLC","DigitalOcean, LLC","AS14061 DigitalOcean, LLC",,DIGITALOCEAN-104-248-0-0,,104.248.0.0/16,104.248.0.0,104.248.255.255,No
+107.152.98.5,4145,United States,California,Los Angeles,90009,34.0549,-118.243,Performive LLC,Performive LLC,AS46562 Performive LLC,,TOTAL-SERVER-SOLUTIONS,,107.152.96.0/20,107.152.96.0,107.152.111.255,Yes
+107.181.168.145,4145,United States,Florida,Miami,33187,25.6024,-80.5121,Performive LLC,Performive LLC,AS46562 Performive LLC,,TOTAL-SERVER-SOLUTIONS,,107.181.160.0/19,107.181.160.0,107.181.191.255,Yes
+121.169.46.116,1090,South Korea,Gyeonggi-do,Osan,181,37.1549,127.0674,Korea Telecom,Sudogwongangnambonbujang,AS4766 Korea Telecom,,KORNET-KR,KR,121.160.0.0/11,121.160.0.0,121.191.255.255,Yes
+139.59.24.173,1080,India,Karnataka,Bengaluru,560100,12.9753,77.591,"DigitalOcean, LLC","DigitalOcean, LLC","AS14061 DigitalOcean, LLC",,DIGITALOCEAN-AP,IN,139.59.16.0/20,139.59.16.0,139.59.31.255,No
+147.45.51.168,1080,Italy,Lombardy,Milan,20145,45.4722,9.1922,Global Connectivity Solutions LLP,Global Connectivity Solutions LLP,AS215540 GLOBAL CONNECTIVITY SOLUTIONS LLP,393.ip-ptr.tech,,,,,,Yes
+159.203.61.169,1080,Canada,Ontario,Toronto,M5A,43.709,-79.4057,"DigitalOcean, LLC",Digital Ocean,"AS14061 DigitalOcean, LLC",,DIGITALOCEAN-159-203-0-0,,159.203.0.0/16,159.203.0.0,159.203.255.255,No
+16.62.79.69,3128,Switzerland,Zurich,Zurich,8098,47.3643,8.5437,"Amazon.com, Inc.","Amazon.com, Inc.","AS16509 Amazon.com, Inc.",ec2-16-62-79-69.eu-central-2.compute.amazonaws.com,AMAZON-ZRH,,16.62.0.0/15,16.62.0.0,16.63.255.255,No
+161.35.31.237,1080,Germany,Hesse,Frankfurt am Main,60313,50.1169,8.6837,"DigitalOcean, LLC","DigitalOcean, LLC","AS14061 DigitalOcean, LLC",,DIGITALOCEAN-161-35-0-0,,161.35.0.0/16,161.35.0.0,161.35.255.255,No
+162.253.68.97,4145,United States,California,Los Angeles,90009,34.0549,-118.243,Performive LLC,Performive LLC,AS46562 Performive LLC,ip-162-253-68-97.hosts.zerolag.com,ZEROLAG-1860,,162.253.68.0/22,162.253.68.0,162.253.71.255,Yes
+174.75.211.222,4145,United States,Illinois,Chicago,60666,41.8781,-87.6298,Cox Communications Inc.,Cox Communications,AS22773 Cox Communications Inc.,,NETBLK-AT-INT-174-75-128-0,,174.75.128.0/17,174.75.128.0,174.75.255.255,Yes
