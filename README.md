@@ -10720,17 +10720,18 @@ A Python tool for scraping and analyzing IP addresses to detect geographic locat
 
 
 
+
 <!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
 ## 📊 Latest Scan Results
 
-**Last Updated:** 2026-05-31 15:23:33 UTC
+**Last Updated:** 2026-05-31 16:38:20 UTC
 
 - **Total IPs Scanned:** 12
-- **Unique Countries:** 9
-- **Unique ISPs:** 7
+- **Unique Countries:** 8
+- **Unique ISPs:** 6
 
 ### Top Countries
-- United States: 4 IPs
+- United States: 3 IPs
 - Vietnam: 1 IPs
 - Netherlands: 1 IPs
 - South Korea: 1 IPs
@@ -10738,12 +10739,13 @@ A Python tool for scraping and analyzing IP addresses to detect geographic locat
 
 ### Top ISPs
 - DigitalOcean, LLC: 4 IPs
-- Performive LLC: 3 IPs
+- Performive LLC: 2 IPs
 - Vietnam Posts and Telecommunications Group: 1 IPs
 - Korea Telecom: 1 IPs
-- Global Connectivity Solutions LLP: 1 IPs
+- Amazon.com, Inc.: 1 IPs
 
 <!-- END AUTO-GENERATED STATS -->
+
 
 
 
