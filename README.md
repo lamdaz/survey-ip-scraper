@@ -10979,30 +10979,32 @@ A Python tool for scraping and analyzing IP addresses to detect geographic locat
 
 
 
+
 <!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
 ## 📊 Latest Scan Results
 
-**Last Updated:** 2026-06-27 04:11:42 UTC
+**Last Updated:** 2026-06-27 07:26:17 UTC
 
 - **Total IPs Scanned:** 12
-- **Unique Countries:** 6
-- **Unique ISPs:** 6
+- **Unique Countries:** 9
+- **Unique ISPs:** 7
 
 ### Top Countries
-- United States: 3 IPs
+- United States: 4 IPs
 - Vietnam: 1 IPs
 - The Netherlands: 1 IPs
+- South Korea: 1 IPs
 - India: 1 IPs
-- Italy: 1 IPs
 
 ### Top ISPs
-- DigitalOcean, LLC: 2 IPs
-- Performive LLC: 2 IPs
+- DigitalOcean, LLC: 4 IPs
+- Performive LLC: 3 IPs
 - Phong Thuy media joint stock company: 1 IPs
+- Korea Telecom: 1 IPs
 - Global Connectivity Solutions LLP: 1 IPs
-- Amazon.com, Inc.: 1 IPs
 
 <!-- END AUTO-GENERATED STATS -->
+
 
 
 
