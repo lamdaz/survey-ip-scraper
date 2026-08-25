@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T02:43:41.732927",
+  "timestamp": "2026-08-25T03:30:20.194782",
   "total_ips": 12,
   "top_countries": {
     "United States": 4,
@@ -13,8 +13,8 @@
     "Performive LLC": 3,
     "Phong Thuy media joint stock company": 1,
     "Korea Telecom": 1,
-    "Amazon.com, Inc.": 1
+    "Global Connectivity Solutions LLP": 1
   },
-  "unique_countries": 8,
-  "unique_isps": 6
+  "unique_countries": 9,
+  "unique_isps": 7
 }
