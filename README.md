@@ -12292,14 +12292,15 @@ A Python tool for scraping and analyzing IP addresses to detect geographic locat
 
 
 
+
 <!-- AUTO-GENERATED STATS - DO NOT EDIT MANUALLY -->
 ## 📊 Latest Scan Results
 
-**Last Updated:** 2026-08-25 01:37:36 UTC
+**Last Updated:** 2026-08-25 02:43:41 UTC
 
 - **Total IPs Scanned:** 12
-- **Unique Countries:** 9
-- **Unique ISPs:** 7
+- **Unique Countries:** 8
+- **Unique ISPs:** 6
 
 ### Top Countries
 - United States: 4 IPs
@@ -12313,9 +12314,10 @@ A Python tool for scraping and analyzing IP addresses to detect geographic locat
 - Performive LLC: 3 IPs
 - Phong Thuy media joint stock company: 1 IPs
 - Korea Telecom: 1 IPs
-- Global Connectivity Solutions LLP: 1 IPs
+- Amazon.com, Inc.: 1 IPs
 
 <!-- END AUTO-GENERATED STATS -->
+
 
 
 
