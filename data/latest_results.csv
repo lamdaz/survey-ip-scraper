@@ -7,7 +7,7 @@ ip,port,country,region,city,zip,lat,lon,isp,org,as,reverse,netname,country_reg,c
 139.59.24.173,1080,India,Karnataka,Bengaluru,560100,12.9753,77.591,"DigitalOcean, LLC","DigitalOcean, LLC","AS14061 DigitalOcean, LLC",,,,,,,No
 147.45.51.168,1080,Italy,Lombardy,Milan,20121,45.4722,9.1922,Global Connectivity Solutions LLP,Global Connectivity Solutions LLP,AS215540 GLOBAL CONNECTIVITY SOLUTIONS LLP,,GCS_SER-NET,IT,147.45.51.0/24,147.45.51.0,147.45.51.255,Yes
 159.203.61.169,1080,Canada,Ontario,Toronto,M5A,43.709,-79.4057,"DigitalOcean, LLC",Digital Ocean,"AS14061 DigitalOcean, LLC",,DIGITALOCEAN-159-203-0-0,,159.203.0.0/16,159.203.0.0,159.203.255.255,No
-16.62.79.69,3128,Switzerland,Zurich,Zurich,,47.36667,8.55,"Amazon.com, Inc.",AWS EC2 (eu-central-2),"AS16509 Amazon.com, Inc.",ec2-16-62-79-69.eu-central-2.compute.amazonaws.com,AMAZON-ZRH,,16.62.0.0/15,16.62.0.0,16.63.255.255,No
+16.62.79.69,3128,Switzerland,Zurich,Zurich,,47.36667,8.55,"Amazon.com, Inc.",AWS EC2 (eu-central-2),"AS16509 Amazon.com, Inc.",,AMAZON-ZRH,,16.62.0.0/15,16.62.0.0,16.63.255.255,No
 161.35.31.237,1080,Germany,Hesse,Frankfurt am Main,60313,50.1169,8.6837,"DigitalOcean, LLC","DigitalOcean, LLC","AS14061 DigitalOcean, LLC",,DIGITALOCEAN-161-35-0-0,,161.35.0.0/16,161.35.0.0,161.35.255.255,No
 162.253.68.97,4145,United States,California,Los Angeles,90009,34.0549,-118.243,Performive LLC,Performive LLC,AS46562 Performive LLC,ip-162-253-68-97.hosts.zerolag.com,ZEROLAG-1860,,162.253.68.0/22,162.253.68.0,162.253.71.255,Yes
 174.75.211.222,4145,United States,Florida,Pensacola,32516,30.4077,-87.219,Cox Communications Inc.,Cox Communications,AS22773 Cox Communications Inc.,,NETBLK-AT-INT-174-75-128-0,,174.75.128.0/17,174.75.128.0,174.75.255.255,Yes
